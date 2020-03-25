@@ -1,8 +1,6 @@
 const socket = io()
 
-// socket.on('countUpdated', (count) => {
-//     console.log('The count has been updated ' + count)
-// })
+
 
 const $messageForm = document.querySelector('#submitform')
 const $mssgFormInput = document.querySelector('#textinput')
@@ -71,15 +69,10 @@ socket.on('roomData', ({room, users}) => {
   document.getElementById('sidebar').innerHTML = html
 })
 
-// document.querySelector('#increment').addEventListener('click', () => {
-//     console.log('clicked')
-//     socket.emit('increment')
-// })
 
 $messageForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    //$mssgFormButton.setAttribute('disabled', 'disabled')
-    // const message = document.querySelector('#textinput').value
+
     const message = e.target.elements.textinput.value
     socket.emit('rmessage', message, (error)=>{
         

@@ -16,8 +16,7 @@ const public = path.join(__dirname, '../public')
 
 app.use(express.static(public))
 
-// let count = 0
-var mssg = ''
+
 
 //socket.emit :-- sends mssg to a specific client
 //io.emit:-- to everyone
